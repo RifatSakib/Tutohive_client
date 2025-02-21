@@ -17,6 +17,13 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home/>,
       },
+      
+    {
+      path: 'find-tutors/:category',
+      element: <h1>this is catagory</h1>
+      // loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`)
+    },
+
       {
         path: 'login',
         element: <Login></Login>

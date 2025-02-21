@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer bg-[#F0F0D7] text-base-content p-10">
+        <footer className="footer max-w-screen-xl bg-[#F0F0D7] text-base-content p-10">
   <nav>
     <h6 className="footer-title">Services</h6>
     <a className="link link-hover">Branding</a>
@@ -29,13 +29,7 @@ const Footer = () => {
       <label className="label">
         <span className="label-text">Enter your email address</span>
       </label>
-      <div className="join">
-        <input
-          type="text"
-          placeholder="username@site.com"
-          className="input input-bordered join-item" />
-        <button className="btn btn-primary join-item">Subscribe</button>
-      </div>
+      
     </fieldset>
   </form>
 </footer>

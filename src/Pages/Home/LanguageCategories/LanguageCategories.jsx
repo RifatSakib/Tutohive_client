@@ -19,52 +19,52 @@ const LanguageCategories = () => {
     ];
     return (
 
-      
-<>
 
- <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 py-10">
+        <>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 py-10">
                 {tutors.map((tutor, index) => (
-                    
- <Link to={`/find-tutors/${tutor.language}`} >
+
+                    <Link to={`/find-tutors/${tutor.language}`} >
                         <div
-                        key={index}
-                        className="card bg-base-100 shadow-xl p-4 flex flex-row items-center justify-between hover:bg-base-200 cursor-pointer transition-all"
-                    >
-                       
-                        <div className="flex items-center gap-4">
-                            <span className="text-2xl">{tutor.icon}</span>
-                            <div>
-                                <h2 className="font-bold text-lg">{tutor.language} tutors</h2>
-                                <p className="text-sm text-gray-500">{tutor.teachers} teachers</p>
+                            key={index}
+                            className="card bg-base-100 shadow-xl p-4 flex flex-row items-center justify-between hover:bg-base-200 cursor-pointer transition-all"
+                        >
+
+                            <div className="flex items-center gap-4">
+                                <span className="text-2xl">{tutor.icon}</span>
+                                <div>
+                                    <h2 className="font-bold text-lg">{tutor.language} tutors</h2>
+                                    <p className="text-sm text-gray-500">{tutor.teachers} teachers</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="text-xl">➜</div>
-                       
-                    </div> </Link>
-                   
-                    
+                            <div className="text-xl">➜</div>
+
+                        </div> </Link>
+
+
                 ))}
 
 
 
 
 
-            </div> 
+            </div>
 
-</>
-
-            
-
-
-
-
-           
+        </>
 
 
 
 
 
-   
+
+
+
+
+
+
+
+
 
 
 

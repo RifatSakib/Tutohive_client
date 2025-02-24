@@ -5,14 +5,16 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import UseAxiosSecure from '../../../Hooks/UseAxiosSecure';
 import { MdPostAdd } from 'react-icons/md';
+import UseAxiosPublic from '../../../Hooks/UseAxiosPublic';
 
 const AddTutorials = () => {
     const { user, logOut } = useContext(AuthContext);
     const { register, handleSubmit, reset, watch, setValue } = useForm();
     const currentDate = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
     const axiosSecure = UseAxiosSecure();
+    const axiosPublic= UseAxiosPublic();
 
-    console.log(user);
+    console.log(user.photoURL);
 
 // https://i.ibb.co.com/zWzNfRY6/course2.jpg
 // https://i.ibb.co.com/WNsGjNk8/course3.jpg
@@ -29,16 +31,24 @@ const AddTutorials = () => {
         const tutorialsItem = {
             name: data.name,
             email: data.email,
+            tutor_image: user.photoURL,
             image: data.image,
             language: data.language,
             price: parseFloat(data.price),
             description: data.description,
             review: parseInt(data.review),
+
            
         }
 
+        console.log(tutorialsItem);
+
         const tutorialsRes = await axiosSecure.post('/tutorials', tutorialsItem);
         console.log(tutorialsRes.data)
+
+
+        
+
         if (tutorialsRes.data.insertedId) {
             // show success popup
             reset();

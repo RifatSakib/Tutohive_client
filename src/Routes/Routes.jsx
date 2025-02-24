@@ -9,6 +9,7 @@ import PrivateRoute from './PrivateRoute';
 import AddTutorials from '../Pages/Home/AddTutorials/AddTutorials';
 import FinadTutors from '../Pages/FindTutors/FinadTutors';
 import FindTutorByCategory from '../Pages/FindTutorByCategory/FindTutorByCategory';
+import TutorDetails from '../Pages/TutorDetails/TutorDetails';
 
 
 export const router = createBrowserRouter([
@@ -18,19 +19,24 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home/>,
+        element: <Home />,
       },
-      
+
       {
         path: 'find-tutors',
-        element: <FinadTutors></FinadTutors> ,
+        element: <FinadTutors></FinadTutors>,
       },
-    {
-      path: 'find-tutors/:category',
-      element: <FindTutorByCategory></FindTutorByCategory> ,
-      loader: ({params}) => fetch(`http://localhost:7000/tutorials/${params.category}`)
-    },
+      {
+        path: 'find-tutors/:category',
+        element: <FindTutorByCategory></FindTutorByCategory>,
+        loader: ({ params }) => fetch(`http://localhost:7000/tutorials/${params.category}`)
+      },
 
+      {
+        path: 'tutor/:id',
+        element: <TutorDetails></TutorDetails>,
+        loader: ({ params }) => fetch(`http://localhost:7000/tutorials/${params.id}`)
+      },
       {
         path: 'login',
         element: <Login></Login>
@@ -45,7 +51,7 @@ export const router = createBrowserRouter([
         element: <AddTutorials></AddTutorials>
       },
 
-      
+
 
 
 
@@ -58,28 +64,28 @@ export const router = createBrowserRouter([
 
 
 
-    // {
-    //   path: 'updateItem/:id',
-    //   element: <UpdateItems></UpdateItems>,
-    //   loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`)
-    // },
-
-    
-  
-
-    
+  // {
+  //   path: 'updateItem/:id',
+  //   element: <UpdateItems></UpdateItems>,
+  //   loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`)
+  // },
 
 
 
 
 
 
-    
-
-  
 
 
- 
+
+
+
+
+
+
+
+
+
 
 
   {

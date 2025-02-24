@@ -16,10 +16,7 @@ const AddTutorials = () => {
 
     console.log(user.photoURL);
 
-// https://i.ibb.co.com/zWzNfRY6/course2.jpg
-// https://i.ibb.co.com/WNsGjNk8/course3.jpg
-// https://i.ibb.co.com/YB8Nq036/course4.webp
-// https://i.ibb.co.com/21HYbNsp/course1.jpg
+
 
 
     const onSubmit = async (data) => {

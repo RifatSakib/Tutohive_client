@@ -7,6 +7,8 @@ import Login from '../Pages/Login/Login';
 import SignUp from '../Pages/SignUp/SignUp';
 import PrivateRoute from './PrivateRoute';
 import AddTutorials from '../Pages/Home/AddTutorials/AddTutorials';
+import FinadTutors from '../Pages/FindTutors/FinadTutors';
+import FindTutorByCategory from '../Pages/FindTutorByCategory/FindTutorByCategory';
 
 
 export const router = createBrowserRouter([
@@ -19,10 +21,14 @@ export const router = createBrowserRouter([
         element: <Home/>,
       },
       
+      {
+        path: 'find-tutors',
+        element: <FinadTutors></FinadTutors> ,
+      },
     {
       path: 'find-tutors/:category',
-      element: <h1>this is catagory</h1>
-      // loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`)
+      element: <FindTutorByCategory></FindTutorByCategory> ,
+      loader: ({params}) => fetch(`http://localhost:7000/tutorials/${params.category}`)
     },
 
       {

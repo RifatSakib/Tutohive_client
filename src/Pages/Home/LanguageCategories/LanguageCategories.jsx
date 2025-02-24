@@ -25,7 +25,7 @@ const LanguageCategories = () => {
  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 py-10">
                 {tutors.map((tutor, index) => (
                     
- <Link to={`/find-tutors/:${tutor.language}`} >
+ <Link to={`/find-tutors/${tutor.language}`} >
                         <div
                         key={index}
                         className="card bg-base-100 shadow-xl p-4 flex flex-row items-center justify-between hover:bg-base-200 cursor-pointer transition-all"

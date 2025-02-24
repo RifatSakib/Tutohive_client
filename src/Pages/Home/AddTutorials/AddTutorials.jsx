@@ -4,6 +4,7 @@ import { FaBicycle } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import UseAxiosSecure from '../../../Hooks/UseAxiosSecure';
+import { MdPostAdd } from 'react-icons/md';
 
 const AddTutorials = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -32,7 +33,7 @@ const AddTutorials = () => {
             language: data.language,
             price: parseFloat(data.price),
             description: data.description,
-            review: data.review,
+            review: parseInt(data.review),
            
         }
 
@@ -201,7 +202,9 @@ const AddTutorials = () => {
 
 
                     <input
-                        type="text"
+                        type="number"
+                        readOnly
+                        defaultValue={0}
                         placeholder="Review"
                         {...register('review', { required: true })}
                         className="input input-bordered w-full" />
@@ -211,7 +214,8 @@ const AddTutorials = () => {
                 
 
                 <button className="btn btn-success col-span-2">
-                    Book <FaBicycle className="ml-4"></FaBicycle>
+                    Submit  <MdPostAdd></MdPostAdd>
+
                 </button>
             </form>
         </div>

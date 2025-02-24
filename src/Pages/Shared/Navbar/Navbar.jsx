@@ -27,10 +27,10 @@ const Navbar = () => {
   const links = <>
 
     <li className='font-bold text-lg text-white'><NavLink to="/">Home</NavLink></li>
-    <li className='font-bold text-lg text-white'><NavLink to="/">Find Tutors</NavLink></li>
+    <li className='font-bold text-lg text-white'><NavLink to="/find-tutors">Find Tutors</NavLink></li>
     <li className='font-bold text-lg text-white'><NavLink to="/addTutorials">Add Tutorials</NavLink></li>
-    <li className='font-bold text-lg text-white'><NavLink to="/">My Tutorials</NavLink></li>
-    <li className='font-bold text-lg text-white'><NavLink to="/">My Booked Tutors</NavLink></li>
+    <li className='font-bold text-lg text-white'><NavLink to="/MyTutorials">My Tutorials</NavLink></li>
+    <li className='font-bold text-lg text-white'><NavLink to="/MyBookedTutors">My Booked Tutors</NavLink></li>
 
   </>
 

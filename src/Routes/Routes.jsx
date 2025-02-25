@@ -10,6 +10,7 @@ import AddTutorials from '../Pages/Home/AddTutorials/AddTutorials';
 import FinadTutors from '../Pages/FindTutors/FinadTutors';
 import FindTutorByCategory from '../Pages/FindTutorByCategory/FindTutorByCategory';
 import TutorDetails from '../Pages/TutorDetails/TutorDetails';
+import MyBookedTutor from '../Pages/MyBookedTutor/MyBookedTutor';
 
 
 export const router = createBrowserRouter([
@@ -29,13 +30,13 @@ export const router = createBrowserRouter([
       {
         path: 'find-tutors/:category',
         element: <FindTutorByCategory></FindTutorByCategory>,
-        loader: ({ params }) => fetch(`http://localhost:7000/tutorials/${params.category}`)
+        loader: ({ params }) => fetch(`https://tutorhive-two.vercel.app/tutorials/${params.category}`)
       },
 
       {
         path: 'tutor/:id',
         element: <TutorDetails></TutorDetails>,
-        loader: ({ params }) => fetch(`http://localhost:7000/tutorials/${params.id}`)
+        loader: ({ params }) => fetch(`https://tutorhive-two.vercel.app/tutorials/${params.id}`)
       },
       {
         path: 'login',
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
         element: <AddTutorials></AddTutorials>
       },
 
+      {
+        path: 'MyBookedTutors',
+        element: <MyBookedTutor></MyBookedTutor>
+      },
 
 
 

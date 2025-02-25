@@ -36,6 +36,7 @@ const TutorDetails = () => {
 
 
         const tutorItem = {
+            name:tutor.name,
             tutorId: tutor._id,
             image: tutor.tutor_image,
             language: tutor.language,
@@ -68,10 +69,10 @@ const TutorDetails = () => {
 
     }
 
-    return (<div>
+    return (<div className='py-10'>
 
 
-        <div className="max-w-xl mx-auto bg-white border border-gray-200 rounded-lg shadow-md h-full flex flex-col">
+        <div className="max-w-xl mx-auto bg-white border border-gray-200 rounded-lg shadow-md h-full flex flex-col ">
             <img className="rounded-t-lg flex-grow" src={tutor.tutor_image || "path/to/image.jpg"} alt={tutor.tutor_image} />
             <div className="p-5 flex flex-col flex-grow">
                 <h5 className="text-xl font-bold tracking-tight text-gray-900">

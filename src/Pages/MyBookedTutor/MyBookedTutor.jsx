@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import UseAxiosSecure from '../../Hooks/UseAxiosSecure';
 import UseAuth from '../../Hooks/UseAuth';
 import { useQuery } from '@tanstack/react-query';
+import Swal from 'sweetalert2';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const MyBookedTutor = () => {
 
     const axiosSecure = UseAxiosSecure();
     const { user } = UseAuth();
-    const [selectedItem, setSelectedItem] = useState(null); // State to hold the selected item
 
 
 
@@ -15,13 +17,38 @@ const MyBookedTutor = () => {
         queryKey: ['tutor'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/tutor`);
+           
             return res.data;
         }
     })
+    
 
-    const handleReview = (item) => {
-        setSelectedItem(item); // Set the selected item
-       
+    if (loading) {
+        return <div className="loading loading-dots loading-lg text-center"></div>;
+    }
+
+    const handleReview = async (item) => {
+       console.log(item._id)
+
+       try {
+        // Update order status
+        await axiosSecure.patch(`/tutorials/review/${item.tutorId}`);
+        
+        refetch(); 
+
+        // Show success message
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `review Updated`,
+            showConfirmButton: false,
+            timer: 1500
+        });
+    } catch (err) {
+        console.error(err);
+        toast.error(err.response?.data || "An error occurred");
+    }
+
     };
 
 

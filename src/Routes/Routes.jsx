@@ -11,6 +11,8 @@ import FinadTutors from '../Pages/FindTutors/FinadTutors';
 import FindTutorByCategory from '../Pages/FindTutorByCategory/FindTutorByCategory';
 import TutorDetails from '../Pages/TutorDetails/TutorDetails';
 import MyBookedTutor from '../Pages/MyBookedTutor/MyBookedTutor';
+import MyTutorials from '../Pages/MyTutorials/MyTutorials';
+import UpdateTutorials from '../Pages/UpdateTutorials/UpdateTutorials';
 
 
 export const router = createBrowserRouter([
@@ -39,6 +41,11 @@ export const router = createBrowserRouter([
         loader: ({ params }) => fetch(`https://tutorhive-two.vercel.app/tutorials/${params.id}`)
       },
       {
+        path: 'updateCard/:id',
+        element: <UpdateTutorials></UpdateTutorials>,
+        loader: ({ params }) => fetch(`https://tutorhive-two.vercel.app/tutorials/update${params.id}`)
+      },
+      {
         path: 'login',
         element: <Login></Login>
       },
@@ -57,7 +64,13 @@ export const router = createBrowserRouter([
         element: <MyBookedTutor></MyBookedTutor>
       },
 
+      {
+        path: 'MyTutorials',
+        element: <MyTutorials></MyTutorials>
+      },
 
+
+     
 
 
     ],

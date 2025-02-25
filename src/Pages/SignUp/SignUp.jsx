@@ -1,12 +1,13 @@
-import { useContext } from "react";
+import React from 'react';
 import { Helmet } from "react-helmet-async";
-import { useForm } from "react-hook-form";
-// import { AuthContext } from "../../providers/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
-import { AuthContext } from "../../Providers/AuthProvider";
 import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
+import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
+
 
 const SignUp = () => {
     const axiosPublic = UseAxiosPublic();

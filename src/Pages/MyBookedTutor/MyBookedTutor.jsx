@@ -13,14 +13,23 @@ const MyBookedTutor = () => {
 
 
 
-    const { data: tutor = [], isPending: loading, refetch } = useQuery({
-        queryKey: ['tutor'],
-        queryFn: async () => {
-            const res = await axiosSecure.get(`/tutor`);
+    // const { data: tutor = [], isPending: loading, refetch } = useQuery({
+    //     queryKey: ['tutor'],
+    //     queryFn: async () => {
+    //         const res = await axiosSecure.get(`/tutor`);
            
-            return res.data;
-        }
-    })
+    //         return res.data;
+    //     }
+    // })
+
+     const { data: tutor = [], isPending: loading, refetch } = useQuery({
+            queryKey: ['tutor',user.email],
+            queryFn: async () => {
+                const res = await axiosSecure.get(`/tutor/email/${user.email}`);
+    
+                return res.data;
+            }
+        })
     
 
     if (loading) {

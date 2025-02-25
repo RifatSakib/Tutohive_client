@@ -1,7 +1,44 @@
 import React from 'react';
 import CountUp from 'react-countup';
+import UseAxiosSecure from '../../../Hooks/UseAxiosSecure';
+import { useQuery } from '@tanstack/react-query';
 
 const Stats = () => {
+
+    const axiosSecure = UseAxiosSecure();
+
+
+    const { data: tutor = [], isLoading: loading,  } = useQuery({
+        queryKey: ['tutor'],
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/tutor`);
+            return res.data;
+        }
+    });
+
+
+    const { data: users = [], isLoading: loading2, } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/users`);
+            return res.data;
+        }
+    });
+
+
+
+    
+    const { data: reviewData = { totalReviews: 0 } } = useQuery({
+        queryKey: ['reviews'],
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/reviews/count`);
+            return res.data;
+        }
+    });
+    
+   
+
+
     return (
         <div>
                {/* statics cards */}
@@ -14,7 +51,7 @@ const Stats = () => {
 
     <div className="card-body  flex-grow-0">
        
-        <h2 className="card-title text-2xl justify-center font-bold "> <CountUp end={31200} />+</h2>
+        <h2 className="card-title text-2xl justify-center font-bold "> <CountUp end={tutor.length} />+</h2>
         
         <h2 className="card-title text-sm justify-center text-slate-400 ">Experienced Tutors</h2>
     </div>
@@ -26,7 +63,7 @@ const Stats = () => {
 
     <div className="card-body  flex-grow-0">
        
-        <h2 className="card-title text-2xl justify-center font-bold "> <CountUp end={213} />+</h2>
+        <h2 className="card-title text-2xl justify-center font-bold "> <CountUp end={reviewData.totalReviews} />+</h2>
         
         <h2 className="card-title text-sm justify-center text-slate-400 ">Tutor's Review</h2>
     </div>
@@ -38,7 +75,7 @@ const Stats = () => {
 
     <div className="card-body  flex-grow-0">
        
-        <h2 className="card-title text-2xl justify-center font-bold "> <CountUp end={22} />+</h2>
+        <h2 className="card-title text-2xl justify-center font-bold "> <CountUp end={9} />+</h2>
         
         <h2 className="card-title text-sm justify-center text-slate-400 ">Total Languages</h2>
     </div>
@@ -52,7 +89,7 @@ const Stats = () => {
 
     <div className="card-body  flex-grow-0">
        
-        <h2 className="card-title text-2xl justify-center font-bold "> <CountUp end={32141} />+</h2>
+        <h2 className="card-title text-2xl justify-center font-bold "> <CountUp end={users.length} />+</h2>
         
         <h2 className="card-title text-sm justify-center  text-slate-400">Total Users</h2>
     </div>

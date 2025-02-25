@@ -9,9 +9,9 @@ const Stats = () => {
 
 
     const { data: tutor = [], isLoading: loading,  } = useQuery({
-        queryKey: ['tutor'],
+        queryKey: ['tutorials'],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/tutor`);
+            const res = await axiosSecure.get(`/tutorials`);
             return res.data;
         }
     });

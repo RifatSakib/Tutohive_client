@@ -8,11 +8,9 @@ import { MdPostAdd } from 'react-icons/md';
 import UseAxiosPublic from '../../../Hooks/UseAxiosPublic';
 
 const AddTutorials = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const { register, handleSubmit, reset, watch, setValue } = useForm();
-    const currentDate = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
     const axiosSecure = UseAxiosSecure();
-    const axiosPublic= UseAxiosPublic();
 
     console.log(user.photoURL);
 

@@ -31,18 +31,18 @@ export const router = createBrowserRouter([
       },
       {
         path: 'find-tutors/:category',
-        element: <FindTutorByCategory></FindTutorByCategory>,
+        element: <PrivateRoute><FindTutorByCategory></FindTutorByCategory></PrivateRoute> ,
         loader: ({ params }) => fetch(`https://tutorhive-two.vercel.app/tutorials/${params.category}`)
       },
 
       {
         path: 'tutor/:id',
-        element: <TutorDetails></TutorDetails>,
+        element: <PrivateRoute> <TutorDetails></TutorDetails> </PrivateRoute> ,
         loader: ({ params }) => fetch(`https://tutorhive-two.vercel.app/tutorials/${params.id}`)
       },
       {
         path: 'updateCard/:id',
-        element: <UpdateTutorials></UpdateTutorials>,
+        element: <PrivateRoute> <UpdateTutorials></UpdateTutorials> </PrivateRoute> ,
         loader: ({ params }) => fetch(`https://tutorhive-two.vercel.app/tutorials/update${params.id}`)
       },
       {
@@ -56,17 +56,17 @@ export const router = createBrowserRouter([
 
       {
         path: 'addTutorials',
-        element: <AddTutorials></AddTutorials>
+        element: <PrivateRoute>  <AddTutorials></AddTutorials></PrivateRoute> ,
       },
 
       {
         path: 'MyBookedTutors',
-        element: <MyBookedTutor></MyBookedTutor>
+        element: <PrivateRoute><MyBookedTutor></MyBookedTutor> </PrivateRoute> ,
       },
 
       {
         path: 'MyTutorials',
-        element: <MyTutorials></MyTutorials>
+        element: <PrivateRoute> <MyTutorials></MyTutorials> </PrivateRoute> 
       },
 
 
@@ -75,33 +75,6 @@ export const router = createBrowserRouter([
 
     ],
   },
-
-
-
-
-
-
-
-  // {
-  //   path: 'updateItem/:id',
-  //   element: <UpdateItems></UpdateItems>,
-  //   loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`)
-  // },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

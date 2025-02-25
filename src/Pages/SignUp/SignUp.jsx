@@ -55,7 +55,7 @@ const SignUp = () => {
     return (
         <>
             <Helmet>
-                <title>Grand-Gateway | Sign Up</title>
+            <title>TurorHive | SignUp</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200  pt-40">
                 <div className="hero-content flex-col lg:flex-row-reverse">

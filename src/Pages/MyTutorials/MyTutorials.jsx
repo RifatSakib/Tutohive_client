@@ -13,9 +13,9 @@ const MyTutorials = () => {
 
 
     const { data: tutor = [], isPending: loading, refetch } = useQuery({
-        queryKey: ['tutor'],
+        queryKey: ['tutor',user.email],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/tutorials`);
+            const res = await axiosSecure.get(`/tutorials/email/${user.email}`);
 
             return res.data;
         }

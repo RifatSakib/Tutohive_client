@@ -34,7 +34,7 @@ const Navbar = () => {
   }, [theme]);
 
 
- 
+
 
   const handleLogOut = () => {
     logOut()
@@ -129,19 +129,26 @@ const Navbar = () => {
 
 
                     {user && user.photoURL ? (
-                      <img className="w-10 rounded-full" src={user.photoURL} alt="User Profile" />
+                      <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+
+                        <img className="w-10 rounded-full" src={user?.photoURL} alt="User Profile" />
+                      </div>
                     ) : (
                       <span className="text-2xl md:text-4xl"><RxAvatar /></span>
                     )}
 
                   </summary>
                   <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-36 p-2 shadow -ml-24">
-                    <li className=' cursor-not-allowed bg-none pl-3 '>{user.displayName}</li>
+                    <li className=' cursor-not-allowed bg-none pl-3 '>{user?.displayName}</li>
 
 
-                    <Link to="/"> <li onClick={handleLogOut}><a>Log-Out</a></li></Link>
                   </ul>
                 </details>
+
+               
+
+                  <Link to="/"> <button className='btn btn-sm ' onClick={handleLogOut}>Log-Out</button></Link>
+               
 
 
               </div>
@@ -149,6 +156,8 @@ const Navbar = () => {
               <span className='text-2xl md:text-4xl'> <RxAvatar /> </span>
             )}
           </div>
+
+
 
 
           {user && user?.email ?

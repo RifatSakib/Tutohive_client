@@ -14,11 +14,16 @@ import teacher_logo from "../../../assets/maths.png"
 const Navbar = () => {
 
   const { user, logOut } = useContext(AuthContext);
-
   console.log(user);
-
-
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [isOpen, setIsOpen] = useState(false)
+
+
+
+
+
+
+
 
   // Handle Theme Toggle
   const toggleTheme = () => {
@@ -54,7 +59,7 @@ const Navbar = () => {
 
 
   return (
-    <div className="navbar mx-auto max-w-screen-xl bg-[#727D73] bg-opacity-80 z-10 " >
+    <div className="navbar sticky top-0 left-0 w-ful z-10 bg-[#bcbebc] bg-opacity-50 backdrop-blur-lg shadow-lg px-5 py-6">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -78,7 +83,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className='flex items-center'>
-          <a className="  text-lg px-1 md:px-5 md:text-2xl text-white font-bold">Tutor<span className='text-red-500'>Hive</span> </a>
+          <a className="  text-sm px-1 md:px-5 md:text-2xl text-white font-bold">Tutor<span className='text-red-500'>Hive</span> </a>
           <img className='w-10 hidden md:block' src={teacher_logo} alt="" />
         </div>
 
@@ -88,7 +93,7 @@ const Navbar = () => {
           {links}
         </ul>
       </div>
-      <div className="navbar-end gap-2">
+      <div className="navbar-end gap-4">
 
         {/* Theme Toggle Button */}
 
@@ -99,7 +104,7 @@ const Navbar = () => {
 
           {/* sun icon */}
           <svg
-            className="swap-off h-6 w-6 md:h-10 md:w-10 fill-current"
+            className="swap-off h-5 w-5 md:h-6 md:w-6 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24">
             <path
@@ -108,7 +113,7 @@ const Navbar = () => {
 
           {/* moon icon */}
           <svg
-            className="swap-on h-6 w-6 md:h-10 md:w-10 fill-current"
+            className="swap-on h-5 w-5 md:h-6 md:w-6 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24">
             <path
@@ -119,71 +124,104 @@ const Navbar = () => {
         {/* ---------------------- */}
 
         <div className="login flex gap-2 items-center">
-          <div className=" ">
+         
+
+
+          <div className="relative flex justify-center items-center gap-3 ">
             {user && user?.email ? (
-              <div>
+              <>
+                <div onClick={() => setIsOpen(!isOpen)} className="cursor-pointer">
+                  <div >
+                    {user?.photoURL ? (
+                      <div className="tooltip tooltip-up" data-tip={user?.displayName}>
 
+                        <img
+                          className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover border-2 border-white"
+                          src={user.photoURL}
+                          alt="User Profile"
+                          referrerPolicy="no-referrer"
+                        />
 
-                <details className="dropdown leading-none  ">
-                  <summary className="border-none m-1 p-0 outline-none">
+                        </div>
+                        ) : (
 
+                        <span className="text-2xl md:text-4xl">
+                          <RxAvatar />
+                        </span>
 
-                    {user && user.photoURL ? (
-                      <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
-
-                        <img className="w-10 rounded-full" src={user?.photoURL} alt="User Profile" />
+                  )}
                       </div>
-                    ) : (
-                      <span className="text-2xl md:text-4xl"><RxAvatar /></span>
+
+                {/* Modal Dropdown */}
+                    {isOpen && (
+                      <div
+                        className="absolute rounded-lg shadow-lg w-[40vw] md:w-[12vw] bg-white right-4 top-14 text-sm p-3 border border-gray-200 z-50"
+                      >
+                        <p className="cursor-not-allowed text-gray-700 font-bold text-center border-b pb-2">{user.displayName}</p>
+
+                      </div>
+
                     )}
 
-                  </summary>
-                  <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-36 p-2 shadow -ml-24">
-                    <li className=' cursor-not-allowed bg-none pl-3 '>{user?.displayName}</li>
 
 
-                  </ul>
-                </details>
 
-               
-
-                  <Link to="/"> <button className='btn btn-sm ' onClick={handleLogOut}>Log-Out</button></Link>
-               
+                  </div>
 
 
-              </div>
-            ) : (
-              <span className='text-2xl md:text-4xl'> <RxAvatar /> </span>
+
+
+                  <div className="">
+                    <Link to="/">
+                      <p
+                        onClick={handleLogOut}
+                        className="btn btn-xs md:btn-md btn-outline font-bold cursor-pointer sm:text-sm"
+                      >
+                        Log Out
+                      </p>
+                    </Link>
+                  </div>
+
+                </>
+
+
+                ) : (
+
+                <span className="text-2xl md:text-4xl">
+                  <RxAvatar />
+                </span>
+
+
             )}
+              </div>
+
+
+            {user && user?.email ?
+
+              (
+
+                <></>
+              ) :
+
+              (
+                <Link to="/login" className="btn btn-neutral rounded-none text-white">
+                  Login
+                </Link>
+              )}
+
+
+
+
+
+
+
+
           </div>
 
-
-
-
-          {user && user?.email ?
-
-            (
-
-              <></>
-            ) :
-
-            (
-              <Link to="/login" className="btn btn-neutral rounded-none text-white">
-                Login
-              </Link>
-            )}
-
-
-
-
-
-
         </div>
-
       </div>
-    </div>
-  );
+      );
 };
 
 
-export default Navbar;
+      export default Navbar;

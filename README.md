@@ -16,7 +16,7 @@ By creating an interactive and user-friendly interface, this project aims to:
 
 
 # Project Live Url: (Server)
-# https://tutorhive-two.vercel.app/
+# http://localhost:7000/
 
 # features of my website/project
 

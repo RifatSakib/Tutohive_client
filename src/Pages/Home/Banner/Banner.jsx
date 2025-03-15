@@ -5,7 +5,7 @@ const Banner = () => {
     return (
      
 
-            <div className='w-11/12 mx-auto pb-0'>
+            <div className='w-full mx-auto pb-0'>
                 <div className="carousel w-full pb-0">
 
                     {/* slide 1 */}

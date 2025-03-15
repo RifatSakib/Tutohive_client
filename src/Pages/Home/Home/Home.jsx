@@ -9,7 +9,7 @@ import Hero from '../../Hero/Hero';
 
 const Home = () => {
     return (
-        <div className='w-full'>
+        <div>
             <Helmet>
                 <title>TurorHive | Home</title>
             </Helmet>

@@ -175,7 +175,7 @@ const Navbar = () => {
                     <Link to="/">
                       <p
                         onClick={handleLogOut}
-                        className="btn btn-xs md:btn-md btn-outline font-bold cursor-pointer sm:text-sm"
+                      className="btn text-[8px] p-1 py-0  md:btn-md  text-[#EF4444] bg-transparent font-bold cursor-pointer md:text-base"
                       >
                         Log Out
                       </p>

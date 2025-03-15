@@ -1,11 +1,13 @@
 import React from 'react';
 import Bg from "../../../assets/bg.png"
 import Bg2 from "../../../assets/bg2.png"
+import Bg3 from "../../../assets/bg3.png"
+import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
      
 
-            <div className='w-full mx-auto pb-0'>
+            <div className='w-full mx-auto border border-red-500'>
                 <div className="carousel w-full pb-0">
 
                     {/* slide 1 */}
@@ -14,23 +16,23 @@ const Banner = () => {
 
                         <div className=' m-10 md:flex gap-4'>
 
-                            <div className='w-full'>
-                                <img src={Bg} alt="" />
+                            <div className='w-full  '>
+                                <img className='max-w-[60%] object-cover ml-20 md:ml-32' src={Bg} alt="" />
                             </div>
 
                             <div className='w-full space-y-5 my-auto  '>
                                 <div className='w-[80%] mx-auto space-y-5'>
                                     <h1 className=' font-bold'>Unlock Your Language Potential</h1>
-                                    <h1 className='text-[#eeee4f] text-4xl font-bold'>Learn from the Best Tutors</h1>
+                                    <h1 className='text-[#EF4444] text-4xl font-bold'>Learn from the Best Tutors</h1>
                                     <p className='text-slate-400 text-justify'>Discover a world of language learning with our expert tutors. Whether you're a beginner or looking to refine your skills, we have the right tutor for you. Start your journey today!</p>
 
                                     <div className='flex flex-row gap-3'>
 
-                                        <button className='btn bg-[#eeee4f] rounded-none'>Find a Tutor </button>
+                                    <Link to="/find-tutors">  <button className='btn bg-[#EF4444] rounded-none'>Find a Tutor </button></Link>
                                     </div>
                                 </div>
 
-
+                                
 
                             </div>
 
@@ -49,21 +51,23 @@ const Banner = () => {
 
                     {/* slide 2 */}
 
-                    <div id="slide2" className="carousel-item relative w-full">
+                    <div id="slide2" className="carousel-item relative w-full ">
 
                         <div className='m-10 md:flex gap-4 p-4'>
 
-
+                        <div className='w-full'>
+                                <img className='max-w-[80%] object-cover'  src={Bg2} alt="" />
+                            </div>
 
                             <div className='w-full space-y-5 my-auto  '>
                                 <div className='w-[80%] mx-auto space-y-5'>
                                     <h1 className=' font-bold'>Flexible Learning at Your Fingertips</h1>
-                                    <h1 className='text-[#eeee4f] text-4xl font-bold'>Book Sessions Anytime, Anywhere</h1>
+                                    <h1 className='text-[#EF4444] text-4xl font-bold'>Book Sessions Anytime, Anywhere</h1>
                                     <p className='text-slate-400 text-justify'>Enjoy the convenience of online tutoring. Schedule your sessions at times that work for you and learn from the comfort of your home. Your language journey starts here!</p>
 
                                     <div className='flex flex-row gap-3'>
 
-                                        <button className='btn btn-outline rounded-none'>Browse Tutorials</button>
+                                    <Link to="/MyTutorials">  <button className='btn bg-[#EF4444] rounded-none'>Browse Tutorials</button></Link>
                                     </div>
                                 </div>
 
@@ -72,9 +76,7 @@ const Banner = () => {
                             </div>
 
 
-                            <div className='w-full'>
-                                <img src={Bg2} alt="" />
-                            </div>
+                            
 
                         </div>
 
@@ -94,18 +96,18 @@ const Banner = () => {
                         <div className=' m-10 md:flex gap-4 p-4'>
 
                             <div className='w-full'>
-                                <img src={Bg} alt="" />
+                                <img className='max-w-[80%] object-cover'  src={Bg3} alt="" />
                             </div>
 
                             <div className='w-full space-y-5 my-auto  '>
                                 <div className='w-[80%] mx-auto space-y-5'>
                                     <h1 className=' font-bold'>Join Our Language Community</h1>
-                                    <h1 className='text-[#eeee4f] text-4xl font-bold'>Connect, Learn, and Grow</h1>
+                                    <h1 className='text-[#EF4444] text-4xl font-bold'>Connect, Learn, and Grow</h1>
                                     <p className='text-slate-400 text-justify'>Become part of a vibrant community of learners and tutors. Share experiences, practice together, and enhance your language skills in a friendly atmosphere. Sign up now!</p>
 
                                     <div className='flex flex-row gap-3'>
 
-                                        <button className='btn bg-[#eeee4f] rounded-none'>Get Started</button>
+                                    <Link to="/find-tutors">  <button className='btn bg-[#EF4444] rounded-none'>Find a Tutor </button></Link>
                                     </div>
                                 </div>
 

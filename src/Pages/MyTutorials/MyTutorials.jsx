@@ -6,26 +6,20 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
 const MyTutorials = () => {
-
     const axiosSecure = UseAxiosSecure();
     const { user } = UseAuth();
 
-
-
     const { data: tutor = [], isPending: loading, refetch } = useQuery({
-        queryKey: ['tutor',user.email],
+        queryKey: ['tutor', user.email],
         queryFn: async () => {
             const res = await axiosSecure.get(`/tutorials/email/${user.email}`);
-
             return res.data;
         }
-    })
-
+    });
 
     if (loading) {
         return <div className="loading loading-dots loading-lg text-center"></div>;
     }
-
 
     const handleDelete = async (item) => {
         Swal.fire({
@@ -38,29 +32,26 @@ const MyTutorials = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-
                 axiosSecure.delete(`/tutorials/delete/${item._id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             refetch();
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "Your tutorial has been deleted.",
                                 icon: "success"
                             });
                         }
-                    })
+                    });
             }
         });
-    }
-
-
+    };
 
     return (
-        <div className="overflow-x-auto">
-            <table className="table table-fixed w-full">
+        <div className="overflow-x-auto w-10/12 mx-auto py-10">
+            <table className="table min-w-full border-collapse">
                 <thead>
-                    <tr>
+                    <tr className="bg-gray-100">
                         <th>#</th>
                         <th>Name</th>
                         <th>Image</th>
@@ -68,13 +59,12 @@ const MyTutorials = () => {
                         <th>Price</th>
                         <th className="w-1/4">Description</th>
                         <th>Review</th>
-                        <th>Delete</th>
-                        <th>Update</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {tutor.map((item, index) => (
-                        <tr key={item._id}>
+                        <tr key={item._id} className="border-b">
                             <td>{index + 1}</td>
                             <td>{item.name}</td>
                             <td>
@@ -86,31 +76,31 @@ const MyTutorials = () => {
                             </td>
                             <td>{item.language}</td>
                             <td className="text-orange-400 font-bold">{item.price}$</td>
-
-                            {/* Fixing Description Height */}
                             <td className="w-1/4">
                                 <div className="h-12 overflow-y-auto p-1 bg-base-200 rounded text-justify">
                                     {item.description}
                                 </div>
                             </td>
+                            <td>{item.review}</td>
 
-                            <td>
-                                {item.review}
-                            </td>
-                            <td>
-                                <button onClick={() => handleDelete(item)} className="btn btn-error btn-xs">
-                                    Delete
-                                </button>
-                            </td>
-                            <td>
+                            {/* Button Container - Fix Overflow */}
+                            <td className="p-2">
+                                <div className="flex flex-wrap gap-2 justify-center items-center">
+                                    {/* Delete Button */}
+                                    <button
+                                        onClick={() => handleDelete(item)}
+                                        className="btn btn-error btn-xs w-full md:w-auto"
+                                    >
+                                        Delete
+                                    </button>
 
-                                <Link to={`/updateCard/${item._id}`}>
-
-                                    <button className="btn  bg-yellow-300 btn-xs">Update</button>
-                                </Link>
-                                {/* <button onClick={() => handleUpdate(item)} className="btn btn-success btn-xs">
-                                    Update
-                                </button> */}
+                                    {/* Update Button */}
+                                    <Link to={`/updateCard/${item._id}`} className="w-full md:w-auto">
+                                        <button className="btn bg-yellow-300 btn-xs w-full md:w-auto">
+                                            Update
+                                        </button>
+                                    </Link>
+                                </div>
                             </td>
                         </tr>
                     ))}

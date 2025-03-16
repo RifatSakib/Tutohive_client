@@ -63,11 +63,11 @@ const MyBookedTutor = () => {
 
 
     return (
-        <div className="overflow-x-auto">
-            <table className="table">
+        <div className="overflow-x-auto w-10/12 mx-auto py-10">
+            <table className="table min-w-full border-collapse">
                 {/* head */}
                 <thead>
-                    <tr>
+                    <tr className="bg-gray-100">
                         <th>
                             #
                         </th>

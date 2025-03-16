@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 
+
 const TutorDetails = () => {
     const { id } = useParams();
     const axiosSecure = UseAxiosSecure();
@@ -69,22 +70,24 @@ const TutorDetails = () => {
 
     }
 
-    return (<div className='py-10'>
+    return (<div className='py-10 px-5'>
 
 
-        <div className="max-w-xl mx-auto bg-white border border-gray-200 rounded-lg shadow-md h-full flex flex-col ">
+        <div className="max-w-3xl mx-auto bg-white border border-gray-200 rounded-lg shadow-md h-full flex flex-col ">
             <img className="rounded-t-lg flex-grow" src={tutor.tutor_image || "path/to/image.jpg"} alt={tutor.tutor_image} />
             <div className="p-5 flex flex-col flex-grow">
-                <h5 className="text-xl font-bold tracking-tight text-gray-900">
+                <h5 className="text-xl md:text-4xl font-bold tracking-tight text-gray-900">
                     {tutor.name} <span className="text-gray-600">🌍</span>
                 </h5>
-                <span className="text-gray-600">{tutor.review} reviews</span>
-                <span className="text-gray-600">Price: <span className='text-orange-400 font-bold'> {tutor.price}$</span> </span>
+                <span className="text-gray-600"> <span className='font-bold'>{tutor.review}</span> reviews</span>
+                <span className="text-gray-600 font-bold">Price: <span className='text-orange-400 font-bold'> {tutor.price}$</span> </span>
                 <div className="mt-2 flex-grow">
-                    <span className="text-gray-700">🗣️ {tutor.language}</span>
+                    <span className="text-gray-700 font-bold md:text-2xl">🗣️ {tutor.language}</span>
                 </div>
                 <div>
-                    <p className="text-justify ">{tutor.description} reviews</p>
+
+                    <p className="text-justify ">
+                        {tutor.description} </p>
 
                 </div>
 
@@ -92,7 +95,7 @@ const TutorDetails = () => {
                 <div className="mt-4">
 
 
-                    <button onClick={() => handleSubmit()} className="inline-block px-4 py-2 text-center text-white bg-pink-500 rounded-lg hover:bg-green-600 w-full">
+                    <button onClick={() => handleSubmit()} className="inline-block px-4 py-2 text-center font-bold text-black bg-red-400 rounded-lg hover:bg-red-500 w-full">
                         Book 
                     </button>
 

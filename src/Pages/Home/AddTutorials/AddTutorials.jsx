@@ -65,9 +65,9 @@ const AddTutorials = () => {
 
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-2 gap-2'>
+            <form onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-2'>
                 {/* name */}
-                <div className="form-control w-full my-1">
+                <div className="form-control w-full">
 
                     <label className="label">
                         <span className="label-text">Name</span>
@@ -102,7 +102,7 @@ const AddTutorials = () => {
                 </div>
 
                 {/* email */}
-                <div className="form-control w-full my-1">
+                <div className="form-control w-full ">
 
                     <label className="label">
                         <span className="label-text">Email</span>
@@ -218,7 +218,7 @@ const AddTutorials = () => {
 
                 
 
-                <button className="btn btn-success col-span-2">
+                <button className="btn btn-success md:col-span-2">
                     Submit  <MdPostAdd></MdPostAdd>
 
                 </button>

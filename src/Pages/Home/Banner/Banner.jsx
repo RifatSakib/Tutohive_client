@@ -62,7 +62,7 @@ const Banner = () => {
 
                                     <div className='flex flex-row gap-3'>
 
-                                    <Link to="/find-tutors">  <button className='btn bg-[#EF4444] rounded-none'>Find a Tutor </button></Link>
+                                    <Link to="/find-tutors">  <button className='btn bg-[#EF4444] rounded-none font-bold'>Find a Tutor </button></Link>
                                     </div>
                                 </div>
 

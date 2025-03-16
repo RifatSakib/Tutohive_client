@@ -67,7 +67,7 @@ const MyBookedTutor = () => {
             <table className="table min-w-full border-collapse">
                 {/* head */}
                 <thead>
-                    <tr className="bg-gray-100">
+                    <tr className="bg-gray-100 text-gray-700">
                         <th>
                             #
                         </th>

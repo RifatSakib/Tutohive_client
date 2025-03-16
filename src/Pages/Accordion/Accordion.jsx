@@ -38,9 +38,9 @@ const Accordion = () => {
 
       <div className="collapse bg-gradient-to-b from-gray-300 via-gray-200 to-white bg-opacity-20 backdrop-blur-lg shadow-lg ">
         <input type="radio" name="my-accordion-1" defaultChecked />
-        <div className="collapse-title text-xl font-medium text-center">How does the tutor booking system work in Tutorhive?</div>
+        <div className="collapse-title text-xl font-medium text-center text-black">How does the tutor booking system work in Tutorhive?</div>
         <div className="collapse-content">
-          <p className='px-10 text-justify'>The tutor booking system allows users to browse available tutors based on categories such as language and subject. Users can view tutor profiles, including their name, image, language, price, and reviews. When a user clicks the "Book" button on a tutor's profile, the tutor's details are stored in the database, linking them to the logged-in user. This ensures that the user can access their booked tutors from the "My Booked Tutors" page.</p>
+          <p className='px-10 text-justify text-black'>The tutor booking system allows users to browse available tutors based on categories such as language and subject. Users can view tutor profiles, including their name, image, language, price, and reviews. When a user clicks the "Book" button on a tutor's profile, the tutor's details are stored in the database, linking them to the logged-in user. This ensures that the user can access their booked tutors from the "My Booked Tutors" page.</p>
         </div>
       </div>
 
@@ -49,9 +49,9 @@ const Accordion = () => {
 
       <div className="collapse bg-gradient-to-b from-gray-300 via-gray-200 to-white bg-opacity-20 backdrop-blur-lg shadow-lg ">
         <input type="radio" name="my-accordion-1" />
-        <div className="collapse-title text-xl font-medium text-center">What are the key features of the Tutorhive?</div>
+        <div className="collapse-title text-xl font-medium text-center text-black">What are the key features of the Tutorhive?</div>
         <div className="collapse-content">
-          <p className='px-10 text-justify'> Tutorhive provides the following key features:
+          <p className='px-10 text-justify text-black'> Tutorhive provides the following key features:
             ✅ Find Tutors: Users can browse available tutors by category, view their details, and book sessions.
             ✅ Add Tutorials: Tutors can add tutorials, including their name, image, language, price, and description.
             ✅ My Tutorials: Users can view, update, or delete their added tutorials.
@@ -67,9 +67,9 @@ const Accordion = () => {
 
       <div className="collapse bg-gradient-to-b from-gray-300 via-gray-200 to-white bg-opacity-20 backdrop-blur-lg shadow-lg ">
         <input type="radio" name="my-accordion-1" />
-        <div className="collapse-title text-xl font-medium text-center">What functionalities are available on the "My Tutorials" page?</div>
+        <div className="collapse-title text-xl font-medium text-center text-black">What functionalities are available on the "My Tutorials" page?</div>
         <div className="collapse-content">
-          <p className='px-10 text-justify'>The My Tutorials page allows users to manage the tutorials they have added. It includes:
+          <p className='px-10 text-justify text-black'>The My Tutorials page allows users to manage the tutorials they have added. It includes:
             ✏️ Update Button: Users can edit tutorial details, such as language, price, and description.
             🗑️ Delete Button: Users can remove their tutorial from the database.
             📋 Table Format: Tutorials are displayed in an organized table with key details like name, image, language, price, and review count.

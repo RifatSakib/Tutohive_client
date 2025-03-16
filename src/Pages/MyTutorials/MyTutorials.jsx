@@ -51,7 +51,7 @@ const MyTutorials = () => {
         <div className="overflow-x-auto w-10/12 mx-auto py-10">
             <table className="table min-w-full border-collapse">
                 <thead>
-                    <tr className="bg-gray-100">
+                    <tr className="bg-gray-100 text-gray-700">
                         <th>#</th>
                         <th>Name</th>
                         <th>Image</th>
@@ -85,7 +85,7 @@ const MyTutorials = () => {
 
                             {/* Button Container - Fix Overflow */}
                             <td className="p-2">
-                                <div className="flex flex-wrap gap-2 justify-center items-center">
+                                <div className="flex flex-wrap gap-2 items-center">
                                     {/* Delete Button */}
                                     <button
                                         onClick={() => handleDelete(item)}
@@ -96,7 +96,7 @@ const MyTutorials = () => {
 
                                     {/* Update Button */}
                                     <Link to={`/updateCard/${item._id}`} className="w-full md:w-auto">
-                                        <button className="btn bg-yellow-300 btn-xs w-full md:w-auto">
+                                        <button className="btn bg-yellow-300 btn-xs w-full md:w-auto text-black">
                                             Update
                                         </button>
                                     </Link>

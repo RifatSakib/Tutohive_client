@@ -36,7 +36,7 @@ AOS.init({
 const Hero = () => {
   return (
     <div
-      className="relative w-full my-16 border border-red-500 h-[150vh] md:h-[50vh]"
+      className="relative w-full my-16  h-[150vh] md:h-[50vh]"
       
     >
       {/* Background Image */}

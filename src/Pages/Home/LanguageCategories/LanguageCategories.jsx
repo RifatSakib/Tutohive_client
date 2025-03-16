@@ -66,11 +66,11 @@ const LanguageCategories = () => {
                             <div className="flex items-center gap-4">
                                 <span className="text-2xl">{tutor.icon}</span>
                                 <div>
-                                    <h2 className="font-bold text-lg">{tutor.language} tutors</h2>
+                                    <h2 className="font-bold text-lg text-black">{tutor.language} tutors</h2>
                                     <p className="text-sm text-gray-500">{tutor.teachers} teachers</p>
                                 </div>
                             </div>
-                            <div className="text-xl">➜</div>
+                            <div className="text-xl text-black">➜</div>
 
                         </div> </Link>
 

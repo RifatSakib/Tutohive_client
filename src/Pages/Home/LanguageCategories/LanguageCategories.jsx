@@ -25,7 +25,7 @@ AOS.init({
   delay: 0, // values from 0 to 3000, with step 50ms
   duration: 400, // values from 0 to 3000, with step 50ms
   easing: 'ease', // default easing for AOS animations
-  once: true, // whether animation should happen only once - while scrolling down
+  once: false, // whether animation should happen only once - while scrolling down
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
@@ -54,7 +54,7 @@ const LanguageCategories = () => {
 
         <>
 
-            <div data-aos="fade-up" data-aos-duration="3000" className="w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-14">
+            <div data-aos="fade-right" data-aos-duration="3000" className="w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-14">
                 {tutors.map((tutor, index) => (
 
                     <Link to={`/find-tutors/${tutor.language}`} >

@@ -23,7 +23,7 @@ AOS.init({
   delay: 0, // values from 0 to 3000, with step 50ms
   duration: 400, // values from 0 to 3000, with step 50ms
   easing: 'ease', // default easing for AOS animations
-  once: true, // whether animation should happen only once - while scrolling down
+  once: false, // whether animation should happen only once - while scrolling down
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
@@ -31,7 +31,7 @@ AOS.init({
 
 const Accordion = () => {
   return (
-    <div data-aos="fade-up" data-aos-duration="3000" className='w-11/12 py-14 flex flex-col gap-4 mx-auto'>
+    <div data-aos="fade-left" data-aos-duration="3000" className='w-11/12 py-14 flex flex-col gap-4 mx-auto'>
 
     <h1 className='text-3xl font-bold text-red-500 text-center'>Frequently asked questions</h1>
 

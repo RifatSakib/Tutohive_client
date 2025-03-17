@@ -27,7 +27,7 @@ AOS.init({
   delay: 0, // values from 0 to 3000, with step 50ms
   duration: 400, // values from 0 to 3000, with step 50ms
   easing: 'ease', // default easing for AOS animations
-  once: true, // whether animation should happen only once - while scrolling down
+  once: false, // whether animation should happen only once - while scrolling down
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
@@ -41,7 +41,7 @@ const Banner = () => {
     return (
      
 
-            <div className='w-full mx-auto min-h-screen'>
+            <div className='w-full mx-auto mt-52'>
                 <div className="carousel w-full pb-0">
 
                     {/* slide 1 */}
@@ -51,7 +51,7 @@ const Banner = () => {
                         <div className=' m-10 md:flex gap-4'>
 
                             <div data-aos="fade-up" data-aos-duration="3000" className='w-full  '>
-                                <img className='max-w-[60%] object-cover ml-20 md:ml-32' src={Bg} alt="" />
+                                <img className='max-w-[60%] object-cover ml-20 md:ml-32' src={Bg2} alt="" />
                             </div>
 
                             <div  className='w-full space-y-5 my-auto  '>

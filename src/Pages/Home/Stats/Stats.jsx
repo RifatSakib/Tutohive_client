@@ -73,7 +73,7 @@ const Stats = () => {
 
 
     return (
-        <div data-aos="fade-up" data-aos-duration="3000" className='w-10/12 mx-auto py-14  '>
+        <div data-aos="zoom-in" data-aos-duration="3000" className='w-10/12 mx-auto py-14 pt-0  '>
             {/* statics cards */}
             <div className='  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  px-5 '>
 

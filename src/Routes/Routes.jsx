@@ -32,18 +32,18 @@ export const router = createBrowserRouter([
       {
         path: 'find-tutors/:category',
         element: <PrivateRoute><FindTutorByCategory></FindTutorByCategory></PrivateRoute> ,
-        loader: ({ params }) => fetch(`https://tutorhive-two.vercel.app/tutorials/${params.category}`)
+        loader: ({ params }) => fetch(`http://localhost:7000/tutorials/${params.category}`)
       },
 
       {
         path: 'tutor/:id',
         element: <PrivateRoute> <TutorDetails></TutorDetails> </PrivateRoute> ,
-        loader: ({ params }) => fetch(`https://tutorhive-two.vercel.app/tutorials/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:7000/tutorials/${params.id}`)
       },
       {
         path: 'updateCard/:id',
         element: <PrivateRoute> <UpdateTutorials></UpdateTutorials> </PrivateRoute> ,
-        loader: ({ params }) => fetch(`https://tutorhive-two.vercel.app/tutorials/update${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:7000/tutorials/update${params.id}`)
       },
       {
         path: 'login',

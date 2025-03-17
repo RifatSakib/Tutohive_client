@@ -2,7 +2,9 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="footer w-full bg-gradient-to-b from-gray-300 via-gray-200 to-white bg-opacity-20 backdrop-blur-lg shadow-lg text-base-content p-10">
+    <div className='pt-14 pb-0'>
+
+    <footer className="footer w-full bg-gradient-to-b from-gray-300 via-gray-200 to-white bg-opacity-20 backdrop-blur-lg shadow-lg text-base-content p-10 ">
       <nav>
         <h6 className="footer-title text-gray-700">Options</h6>
         <a href='/find-tutors' className="link link-hover text-gray-700">Find Tutors</a>
@@ -14,8 +16,8 @@ const Footer = () => {
 
       </nav>
       <nav>
-        <h6 className="footer-title text-gray-700">Company</h6>
-        <a href='https://md-sakib-hossain-rifat.web.app/' className="link link-hover text-gray-700">About us</a>
+        <h6 className="footer-title text-gray-700">About</h6>
+        <a href='https://md-sakib-hossain-rifat.web.app/' className="link link-hover text-gray-700">CEO</a>
 
       </nav>
 
@@ -38,6 +40,7 @@ const Footer = () => {
         </fieldset>
       </form>
     </footer>
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import UseAuth from "./UseAuth";
 
 const axiosSecure = axios.create({
-    baseURL: 'https://tutorhive-two.vercel.app'
+    baseURL: 'http://localhost:7000'
 })
 const UseAxiosSecure = () => {
     const navigate = useNavigate();
